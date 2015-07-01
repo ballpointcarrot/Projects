@@ -1,0 +1,4 @@
+[package]
+name = "numberlib"
+version = "0.1.0"
+authors = ["Christopher Kruse <kruse.christopher@gmail.com>"]
