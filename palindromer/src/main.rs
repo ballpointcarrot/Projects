@@ -2,7 +2,6 @@ use std::path::Path;
 use std::io::BufRead;
 use std::io::BufReader;
 use std::fs::File;
-use std::str;
 
 fn is_palindrome(word: &str) -> bool {
     match word.len() {
@@ -22,7 +21,7 @@ fn is_palindrome(word: &str) -> bool {
 fn main() {
     let path = Path::new("/usr/share/dict/american-english");
     let f = File::open(path).unwrap();
-    let mut filedata = BufReader::new(&f);
+    let filedata = BufReader::new(&f);
 
     for line in filedata.lines() {
         match line {
