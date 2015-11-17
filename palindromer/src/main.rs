@@ -1,4 +1,5 @@
 use std::path::Path;
+use std::io::BufRead;
 use std::io::BufReader;
 use std::fs::File;
 use std::str;
@@ -24,8 +25,13 @@ fn main() {
     let mut filedata = BufReader::new(&f);
 
     for line in filedata.lines() {
-        if is_palindrome(line) {
-            println!("{}", line);
+        match line {
+            Ok(actual_data) => {
+                println!("{}", actual_data);   
+            },
+            Err(_) => {
+                
+            }
         }
     }
 }
